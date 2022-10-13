@@ -7,6 +7,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="styles/example.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</head>
 	<body>
 		<div id="content">
@@ -44,6 +45,7 @@
 					<option disabled="true">2nd</option>
 					<option value="R201">201</option>
 					<option value="R202">202</option>
+					<option value="R203">203</option>
 				</select>
 				<label for="accessible">Accessible</label>
 				<input id="accessible" type="checkbox" name="accessible" value="Accessible" />
@@ -98,7 +100,7 @@
 					'startpoint': function () {
 						return 'lcd.1';
 					},
-					'defaultMap': 'floor1',
+					'defaultMap': 'floor2',
 					'showLocation': true
 				}, function(){
 					console.log('callback reached');

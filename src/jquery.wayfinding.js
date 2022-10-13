@@ -293,6 +293,7 @@
 
 		//Takes x and y coordinates and makes a location indicating pin for those
 		//coordinates. Returns the pin element, not yet attached to the DOM.
+		// TODO: make pin azul
 		function makePin(x, y, type) {
 			var indicator,
 				pin,
@@ -315,7 +316,7 @@
 			symbolPath += 'C9.954,-26.789,3.083,-15.486,0.075,0z';
 
 			pin.setAttribute('d', symbolPath);
-			pin.setAttribute('fill', '#E81E25');
+			pin.setAttribute('fill', '#fff');
 			pin.setAttribute('stroke', '#000000');
 			pin.setAttribute('stroke-width', '3.7');
 			pin.setAttribute('stroke-miterlimit', '10');
@@ -848,7 +849,6 @@
 			var optionsPrior = el.data('wayfinding:options');
 
 			drawing = el.data('wayfinding:drawing'); // load a drawn path, if it exists
-
 			options = $.extend(true, {}, defaults, options);
 
 			// check for settings attached to the current object
@@ -936,9 +936,9 @@
 			$(svgDiv).hide();
 
 			// Hide route information
-			$('#Paths line', svgDiv).attr('stroke-opacity', 0);
-			$('#Doors line', svgDiv).attr('stroke-opacity', 0);
-			$('#Portals line', svgDiv).attr('stroke-opacity', 0);
+			$('#Paths line', svgDiv).attr('stroke-opacity', 1);
+			$('#Doors line', svgDiv).attr('stroke-opacity', 1);
+			$('#Portals line', svgDiv).attr('stroke-opacity', 1);
 
 			// If #Paths, #Doors, etc. are in a group, ensure that group does _not_
 			// have display: none; (commonly set by Illustrator when hiding a layer)
@@ -946,7 +946,7 @@
 			// (A group tag 'g' is used by Illustrator for layers.)
 			var $dataGroup = $('#Paths', svgDiv).parent();
 			if($dataGroup.is('g')) {
-				$dataGroup.attr('opacity', 0).attr('display', 'inline');
+				$dataGroup.attr('opacity', 1).attr('display', 'inline');
 			}
 
 			// The following need to use the el variable to scope their calls: el is jquery element
