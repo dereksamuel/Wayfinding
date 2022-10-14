@@ -93,7 +93,7 @@
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
-      $container.addEventListener('gesturechange', e => {
+      $container.addEventListener('gestureend', e => {
         e.preventDefault();
         if (e.scale < 1.0) {
           // User moved fingers closer together
