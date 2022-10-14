@@ -6,11 +6,6 @@
   <meta meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Document</title>
   <style>
-    html, body {
-      /* touch-action: none; */
-      background-color: black;
-    }
-
     .container {
       height: 349px;
       max-width: 450px;
@@ -83,12 +78,24 @@
         }
       });
 
-      window.addEventListener("gestureend", touchHandler, false);
+      // window.addEventListener("touchstart", touchHandler, false);
 
-      function touchHandler(e){
+      function touchHandler(event){
         // if(event.touches.length > 1){
         //   //the event is multi-touch
         //   //you can then prevent the behavior
+          // event.preventDefault()
+          // event.stopPropagation();
+        // }
+        // alert('touchstart')
+      }
+
+      document.querySelector('button#reset').addEventListener('click', () => {
+        scale = 1;
+        $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+      });
+
+      $container.addEventListener('gestureend', e => {
         e.preventDefault();
         e.stopPropagation();
         e.scale 
@@ -104,16 +111,7 @@
           scale += 1;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
-      }
-
-      document.querySelector('button#reset').addEventListener('click', () => {
-        scale = 1;
-        $container.querySelector('.Scale').style.transform = `scale(${scale})`;
-      });
-
-      // $container.addEventListener('gestureend', e => {
-        
-      // }, false)
+      }, false)
     };
   </script>
 </body>
