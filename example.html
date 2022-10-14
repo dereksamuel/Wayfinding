@@ -15,6 +15,7 @@
       margin-bottom: 50px;
       display: flex;
       align-items: center;
+      touch-action: none;
       justify-content: center;
     }
 
@@ -80,22 +81,10 @@
 
       window.addEventListener("touchstart", touchHandler, false);
 
-      function touchHandler(event){
+      function touchHandler(e){
         // if(event.touches.length > 1){
         //   //the event is multi-touch
         //   //you can then prevent the behavior
-          event.preventDefault()
-          event.stopPropagation();
-        // }
-        // alert('touchstart')
-      }
-
-      document.querySelector('button#reset').addEventListener('click', () => {
-        scale = 1;
-        $container.querySelector('.Scale').style.transform = `scale(${scale})`;
-      });
-
-      $container.addEventListener('gestureend', e => {
         e.preventDefault();
         e.stopPropagation();
         e.scale 
@@ -111,7 +100,16 @@
           scale += 1;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
-      }, false)
+      }
+
+      document.querySelector('button#reset').addEventListener('click', () => {
+        scale = 1;
+        $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+      });
+
+      // $container.addEventListener('gestureend', e => {
+        
+      // }, false)
     };
   </script>
 </body>
