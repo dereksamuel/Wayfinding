@@ -72,7 +72,7 @@
       const $container = document.querySelector('#container');
 
       document.querySelector('button#zoom_in').addEventListener('click', () => {
-        scale += 0.25;
+        scale += 0.15;
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
@@ -113,7 +113,7 @@
           }
         } else if (e.scale > 1.0) {
           // User moved fingers further apart
-          scale += 0.25;
+          scale += 0.15;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       }, false)
