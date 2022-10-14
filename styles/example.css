@@ -66,3 +66,10 @@ g.destinationPin path {
 	z-index: 100;
 	padding: 2rem;
 }
+
+#imgFake {
+	position: absolute !important;
+	left: 18% !important;
+	transform-origin: left !important;
+	transform: none !important;
+}
