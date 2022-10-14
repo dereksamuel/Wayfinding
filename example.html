@@ -74,13 +74,13 @@
       const $container = document.querySelector('#container');
 
       document.querySelector('button#zoom_in').addEventListener('click', () => {
-        scale += 1;
+        scale += 0.25;
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
       document.querySelector('button#zoom_out').addEventListener('click', () => {
         if (scale > 1) {
-          scale -= 1;
+          scale -= 0.25;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       });
@@ -110,12 +110,12 @@
         if (e.scale < 1.0) {
           // User moved fingers closer together
           if (scale > 1) {
-            scale -= 1;
+            scale -= 0.25;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
         } else if (e.scale > 1.0) {
           // User moved fingers further apart
-          scale += 1;
+          scale += 0.25;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       }, false)
