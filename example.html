@@ -83,12 +83,9 @@
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
-      $container.addEventListener('ontouchmove', e => {
-        alert(e, 'ontouchmove');
-      })
-
-      $container.addEventListener('gestureend', e => {
-        alert(e, 'gestureend');
+      $container.addEventListener('gesturechange', e => {
+        e.preventDefault();
+        alert(e, 'gesturechange');
       })
     };
   </script>
