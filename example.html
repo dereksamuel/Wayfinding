@@ -78,15 +78,25 @@
         }
       });
 
+      window.addEventListener("touchstart", touchHandler, false);
+
+      function touchHandler(event){
+        if(event.touches.length > 1){
+          //the event is multi-touch
+          //you can then prevent the behavior
+          event.preventDefault()
+        }
+      }
+
       document.querySelector('button#reset').addEventListener('click', () => {
         scale = 1;
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
-      $container.addEventListener('gesturechange', e => {
-        e.preventDefault();
-        alert(e, 'gesturechange');
-      })
+      // $container.addEventListener('gesturechange', e => {
+      //   e.preventDefault();
+      //   alert(e, 'gesturechange');
+      // })
     };
   </script>
 </body>
