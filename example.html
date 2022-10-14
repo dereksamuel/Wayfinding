@@ -102,7 +102,7 @@
         $container.querySelector('.Scale').style.transform = `scale(${scale})`;
       });
 
-      $container.addEventListener('gesturestart', e => {
+      $container.addEventListener('gesturechange', e => {
         e.preventDefault();
         e.stopPropagation();
         e.scale 
