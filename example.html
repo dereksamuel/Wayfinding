@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Document</title>
   <style>
     .container {
@@ -96,6 +96,7 @@
       $container.addEventListener('gestureend', e => {
         e.preventDefault();
         e.stopPropagation();
+        e.scale 
         // alert(e.target);
         if (e.scale < 1.0) {
           // User moved fingers closer together
