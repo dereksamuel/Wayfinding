@@ -125,9 +125,13 @@
       }
 
       function handlerTouchMove(e) {
-        if (e.touches.length > 1) {
-          let rf = dist(e) / d1 * rs;
-          alert(rf);
+        if (e.touches.length === 2) {
+          scale += 0.15;
+          $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+        } else if (e.touches.length === 1) {
+          // User moved fingers further apart
+          scale += 0.15;
+          $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       }
 
