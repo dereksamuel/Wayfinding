@@ -154,12 +154,12 @@
         if (e.scale < 1.0) {
           // User moved fingers closer together
           if (scale > 1) {
-            scale -= e.scale;
+            scale -= e.scale / 2;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
         } else if (e.scale > 1.0) {
           // User moved fingers further apart
-          scale += e.scale;
+          scale += e.scale / 2;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       }
