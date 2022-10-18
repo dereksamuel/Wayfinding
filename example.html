@@ -8,6 +8,7 @@
   <title>Document</title>
   <style>
     html,body {
+      touch-action: none;
       background-color: rgb(133, 49, 49);
     }
     .container {
@@ -120,7 +121,16 @@
       if (navInfo.indexOf('mac') != -1) {
         $container.addEventListener('gesturechange', handlerGesture, false)
       } else {
-        $container.addEventListener('touchmove', handlerGesture)
+        $container.addEventListener('touchmove', handlerTouchMove)
+      }
+
+      function handlerTouchMove(e) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+
+          let rf = dist(event) / d1 * rs;
+          alert("scale(" + rf + ")");
+        }
       }
 
       function handlerGesture(e) {
