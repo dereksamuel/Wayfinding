@@ -125,6 +125,7 @@
       }
 
       function handlerTouchMove(e) {
+        alert(event.touches.length);
         if (event.touches.length > 1) {
           event.preventDefault();
 
