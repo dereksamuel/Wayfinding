@@ -117,21 +117,25 @@
 
       let navInfo = window.navigator.appVersion.toLowerCase();
       let so = 'Sistema Operativo';
+      let hypo = undefined;
 
       if (navInfo.indexOf('mac') != -1) {
         $container.addEventListener('gesturechange', handlerGesture, false)
       } else {
         $container.addEventListener('touchmove', handlerTouchMove)
+        $container.addEventListener('touchend', function(event) {
+          hypo = undefined;
+        }, false);
       }
 
       function handlerTouchMove(e) {
-        if (e.touches.length === 2) {
-          scale += 0.15;
-          $container.querySelector('.Scale').style.transform = `scale(${scale})`;
-        } else if (e.touches.length === 1) {
-          // User moved fingers further apart
-          scale += 0.15;
-          $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+        if (event.targetTouches.length === 2) {
+          let hypo1 = Math.hypot((event.targetTouches[0].pageX - event.targetTouches[1].pageX),
+            (event.targetTouches[0].pageY - event.targetTouches[1].pageY));
+          if (hypo === undefined) {
+            hypo = hypo1;
+          }
+          alert(hypo1/hypo);
         }
       }
 
