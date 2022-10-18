@@ -119,12 +119,12 @@
       let so = 'Sistema Operativo';
 
       if (navInfo.indexOf('mac') != -1) {
-        $container.addEventListener('gesturechange', handlerTouch, false)
+        $container.addEventListener('gesturechange', handlerGesture, false)
       } else {
-        $container.addEventListener('touchmove', handlerTouch, false)
+        $container.addEventListener('touchmove', handlerGesture)
       }
 
-      function handlerTouch(e) {
+      function handlerGesture(e) {
         alert(e.scale);
         if (e.scale < 1.0) {
           // User moved fingers closer together
