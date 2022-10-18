@@ -125,11 +125,11 @@
       }
 
       function handlerTouchMove(e) {
-        alert(event.touches.length);
-        if (event.touches.length > 1) {
-          event.preventDefault();
+        alert(e.touches.length);
+        if (e.touches.length > 1) {
+          e.preventDefault();
 
-          let rf = dist(event) / d1 * rs;
+          let rf = dist(e) / d1 * rs;
           alert("scale(" + rf + ")");
         }
       }
