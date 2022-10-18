@@ -139,12 +139,12 @@
           if (hypo1/hypo < 1) {
           // User moved fingers closer together
             if (scale > 1) {
-              scale -= 0.25;
+              scale -= e.scale / 2;
               $container.querySelector('.Scale').style.transform = `scale(${scale})`;
             }
           } else if (hypo1/hypo > 1) {
             // User moved fingers further apart
-            scale += 0.15;
+            scale += e.scale / 2;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
         }
