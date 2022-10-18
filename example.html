@@ -9,7 +9,7 @@
   <style>
     html,body {
       touch-action: none;
-      background-color: rgb(133, 49, 49);
+      background-color: rgb(255, 0, 0);
     }
     .container {
       height: 349px;
@@ -125,7 +125,6 @@
       }
 
       function handlerTouchMove(e) {
-        alert(e.touches.length);
         if (e.touches.length > 1) {
           e.preventDefault();
 
