@@ -135,7 +135,18 @@
           if (hypo === undefined) {
             hypo = hypo1;
           }
-          alert(hypo1/hypo);
+
+          if (hypo1/hypo < 1) {
+          // User moved fingers closer together
+            if (scale > 1) {
+              scale -= 0.25;
+              $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+            }
+          } else if (hypo1/hypo > 1) {
+            // User moved fingers further apart
+            scale += 0.15;
+            $container.querySelector('.Scale').style.transform = `scale(${scale})`;
+          }
         }
       }
 
