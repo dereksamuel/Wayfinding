@@ -142,7 +142,7 @@
         if (h < 1) {
           alert(scale)
         // User moved fingers closer together
-          if (scale > 1) {
+          if (scale >= 1) {
             scale -= e.scale / 2;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
