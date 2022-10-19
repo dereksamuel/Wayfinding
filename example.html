@@ -129,25 +129,22 @@
       }
 
       function handlerTouchMove(e) {
-        alert(e.targetTouches.length);
-        if (e.targetTouches.length === 2) {
-          let hypo1 = Math.hypot((e.targetTouches[0].pageX - e.targetTouches[1].pageX),
-            (e.targetTouches[0].pageY - e.targetTouches[1].pageY));
-          if (hypo === undefined) {
-            hypo = hypo1;
-          }
+        let hypo1 = Math.hypot((e.targetTouches[0].pageX - e.targetTouches[1].pageX),
+          (e.targetTouches[0].pageY - e.targetTouches[1].pageY));
+        if (hypo === undefined) {
+          hypo = hypo1;
+        }
 
-          if (hypo1/hypo < 1) {
-          // User moved fingers closer together
-            if (scale > 1) {
-              scale -= e.scale / 2;
-              $container.querySelector('.Scale').style.transform = `scale(${scale})`;
-            }
-          } else if (hypo1/hypo > 1) {
-            // User moved fingers further apart
-            scale += e.scale / 2;
+        if (hypo1/hypo < 1) {
+        // User moved fingers closer together
+          if (scale > 1) {
+            scale -= e.scale / 2;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
+        } else if (hypo1/hypo > 1) {
+          // User moved fingers further apart
+          scale += e.scale / 2;
+          $container.querySelector('.Scale').style.transform = `scale(${scale})`;
         }
       }
 
