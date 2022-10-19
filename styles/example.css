@@ -12,6 +12,8 @@ body {
 #myMaps {
 	height: 480px;
 	width: 100%px;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 #myMaps div {
 	height: 480px;
