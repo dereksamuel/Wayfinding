@@ -123,6 +123,7 @@
       if (navInfo.indexOf('mac') != -1) {
         $container.addEventListener('gesturechange', handlerGesture, false)
       } else {
+        scale = 1
         $container.addEventListener('touchmove', handlerTouchMove)
         $container.addEventListener('touchend', function(event) {
           hypo = undefined;
