@@ -129,7 +129,7 @@
       }
 
       function handlerTouchMove(e) {
-        alert(e);
+        alert(e.targetTouches.length);
         if (e.targetTouches.length === 2) {
           let hypo1 = Math.hypot((e.targetTouches[0].pageX - e.targetTouches[1].pageX),
             (e.targetTouches[0].pageY - e.targetTouches[1].pageY));
