@@ -1112,7 +1112,7 @@
 
 					if(current === count) {
 						if(drawingSegment === drawing.length) {
-							$(obj).trigger('wayfinding:animationComplete');
+							$(obj).trigger('wayfinding:animationCompvare');
 						}
 					}
 				}, current * (speed / count));
@@ -1138,7 +1138,7 @@
 
 			switchFloor(maps[drawing[drawingSegment][0].floor].id, obj);
 
-			// Get the complete path for this particular floor-route
+			// Get the compvare path for this particular floor-route
 			path = $('#' + maps[drawing[drawingSegment][0].floor].id + ' .directionPath' + drawingSegment)[0];
 
 			// Animate using CSS transitions
@@ -1152,13 +1152,13 @@
 			path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset ' + animationDuration + 'ms linear';
 			path.style.strokeDashoffset = '0';
 
-			// If this is the last segment, trigger the 'wayfinding:animationComplete' event
+			// If this is the last segment, trigger the 'wayfinding:animationCompvare' event
 			// when it finishes drawing.
-			// If we're using zoomToRoute however, don't trigger here, trigger when zoomOut is complete (see below)
+			// If we're using zoomToRoute however, don't trigger here, trigger when zoomOut is compvare (see below)
 			if(options.zoomToRoute === false) {
 				if(drawingSegment === (drawing.length - 1)) {
 					$(path).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-						$(obj).trigger('wayfinding:animationComplete');
+						$(obj).trigger('wayfinding:animationCompvare');
 					});
 				}
 			} else {
@@ -1436,7 +1436,7 @@
 									curve.floor = drawing[level][i].floor;
 									// insert curve element
 									// splice function on arrays allows insertion
-									//   array.splice(start, delete count, value, value)
+									//   array.splice(start, devare count, value, value)
 									// drawing[level].splice(current line, 0, curve element object);
 
 									drawing[level].splice(i + 1, 0, curve);
@@ -1604,7 +1604,7 @@
 				 * @function wayfinding
 				 * @memberOf wayfinding
 				 * @param {object} settings an object holding the settings to initialize the plugin with
-				 * @param {function} [callback] optional callback that gets called once setup is completed.
+				 * @param {function} [callback] optional callback that gets called once setup is compvared.
 				 * @example
 				 * $('#myMaps').wayfinding({
 				 * 	'maps': [
@@ -1686,6 +1686,10 @@
 					}
 					break;
 				case 'currentMap':
+					var timer = setTimeout(function () {
+						startZoom($('div:visible', obj).prop('id'));
+						clearTimeout(timer);
+					}, 1000);
 					// return and set
 					if (passed === undefined) {
 						result = $('div:visible', obj).prop('id');
