@@ -136,15 +136,15 @@
           hypo = hypo1;
         }
 
-        alert(hypo1/hypo);
+        const h = hypo1/hypo
 
-        if (hypo1/hypo < 1) {
+        if (h < 1) {
         // User moved fingers closer together
           if (scale > 1) {
             scale -= e.scale / 2;
             $container.querySelector('.Scale').style.transform = `scale(${scale})`;
           }
-        } else if (hypo1/hypo > 1) {
+        } else if (h > 1) {
           // User moved fingers further apart
           scale += e.scale / 2;
           $container.querySelector('.Scale').style.transform = `scale(${scale})`;
