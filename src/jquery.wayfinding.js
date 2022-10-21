@@ -1687,7 +1687,7 @@
 					break;
 				case 'currentMap':
 					var timer = setTimeout(function () {
-						startZoom($('div:visible', obj).prop('id'));
+						// startZoom("svgTransparent");
 						clearTimeout(timer);
 					}, 1000);
 					// return and set

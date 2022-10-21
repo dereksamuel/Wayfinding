@@ -2,6 +2,9 @@ body {
 	background-color: white;
 	font-family: Arial;
 	font-size: 24px;
+	width: 100%;
+	margin: 0;
+	padding: 1rem;
 }
 
 #content {
@@ -11,9 +14,10 @@ body {
 
 #myMaps {
 	height: 480px;
-	width: 100%px;
+	width: 100%;
 	overflow-x: auto;
 	overflow-y: hidden;
+	position: relative;
 }
 #myMaps div {
 	height: 480px;
@@ -25,6 +29,15 @@ body {
 	height: 50px;
 	width: 100%;
 	z-index:-1;
+}
+
+.svgTransparent {
+	z-index: -1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 /*
 div#mapLoading {
