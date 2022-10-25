@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Wayfinding</title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" href="styles/example.css">
 	<script src="https://cdn.jsdelivr.net/npm/pinchzoom@0.8.3/build/pinchzoom.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div>
-		<h1>Wayfinding Demo - version 2.2</h1>
+		<h1>Wayfinding Demo - version 2.3</h1>
 		<p>Works with Chrome, Firefox, and Opera. IE will show path, but is not animating the path.</p>
 		<!-- <p>For more information see <a
 				href="https://github.com/ucdavis/wayfinding">https://github.com/ucdavis/wayfinding</a></p>
@@ -169,7 +169,11 @@
 			setTimeout(() => {
 				svgElement.style["pointer-events"] = "auto";
 				svgElement.style["touch-action"] = "auto";
-			}, 2000);
+				const elements = svgElement.querySelectorAll("[style='pointer-events: none;']");
+				elements.forEach((item) => {
+					item.style["pointer-events"] = "auto";
+				});
+			}, 100);
 			//  Create Manager
 			let mc = new Hammer.Manager(svgElement);
 			function init() {
