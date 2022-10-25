@@ -22,7 +22,7 @@ body {
 #myMaps div {
 	height: 480px;
 	margin: auto auto;
-	width: 600px;
+	width: 100%;
 }
 #controls {
 	background-color: lightGrey;
