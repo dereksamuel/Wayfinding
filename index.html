@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div>
-		<h1>Wayfinding Demo - version 1.8</h1>
+		<h1>Wayfinding Demo - version 1.9</h1>
 		<p>Works with Chrome, Firefox, and Opera. IE will show path, but is not animating the path.</p>
 		<!-- <p>For more information see <a
 				href="https://github.com/ucdavis/wayfinding">https://github.com/ucdavis/wayfinding</a></p>
@@ -169,7 +169,7 @@
 			setTimeout(() => {
 				svgElement.style["pointer-events"] = "auto";
 				svgElement.style["touch-action"] = "auto";
-				// svgElement.style["user-select"] = "auto";
+				svgElement.style["-webkit-user-drag"] = "initial";
 			}, 2000);
 			//  Create Manager
 			let mc = new Hammer.Manager(svgElement);
