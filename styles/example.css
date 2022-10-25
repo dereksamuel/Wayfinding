@@ -70,10 +70,6 @@ g.startPin path {
 	fill: cyan;
 }
 
-g.destinationPin path {
-	/*fill: green;*/
-}
-
 #controls {
 	position: fixed;
 	bottom: 0;
