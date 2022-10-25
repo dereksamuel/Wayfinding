@@ -165,7 +165,7 @@
 				return;
 			}
 			floorIdsmap.push(floorId);
-			let svgElement = document.querySelector(`#${floorId}`);
+			let svgElement = document.querySelector(`#${floorId} svg`);
 			//  Create Manager
 			let mc = new Hammer.Manager(svgElement);
 			function init() {
