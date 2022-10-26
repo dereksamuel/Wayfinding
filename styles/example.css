@@ -29,6 +29,10 @@ body {
 	-webkit-user-drag: initial !important;
 }
 
+g[style="pointer-events: all;"] {
+	pointer-events: all !important;
+}
+
 #myMaps div {
 	height: 480px;
 	margin: auto auto;
