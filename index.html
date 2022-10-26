@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div>
-		<h1>Wayfinding Demo - version 2.8</h1>
+		<h1>Wayfinding Demo - version 2.9</h1>
 		<p>Works with Chrome, Firefox, and Opera. IE will show path, but is not animating the path.</p>
 		<!-- <p>For more information see <a
 				href="https://github.com/ucdavis/wayfinding">https://github.com/ucdavis/wayfinding</a></p>
@@ -166,16 +166,16 @@
 				return;
 			}
 			floorIdsmap.push(floorId);
-			let svgElement = document.querySelector(`#${floorId} svg`);
-			setTimeout(() => {
-				svgElement.style["pointer-events"] = "all";
-				svgElement.style["touch-action"] = "auto";
-				svgElement.style["-webkit-user-drag"] = "initial";
-				const elements = svgElement.querySelectorAll("[style='pointer-events: none;']");
-				elements.forEach((item) => {
-					item.style["pointer-events"] = "all";
-				});
-			}, 1000);
+			// let svgElement = document.querySelector(`#${floorId} svg`);
+			// setTimeout(() => {
+			// 	svgElement.style["pointer-events"] = "all";
+			// 	svgElement.style["touch-action"] = "auto";
+			// 	svgElement.style["-webkit-user-drag"] = "initial";
+			// 	const elements = svgElement.querySelectorAll("[style='pointer-events: none;']");
+			// 	elements.forEach((item) => {
+			// 		item.style["pointer-events"] = "all";
+			// 	});
+			// }, 1000);
 			//  Create Manager
 			let mc = new Hammer.Manager(svgElement);
 			function init() {

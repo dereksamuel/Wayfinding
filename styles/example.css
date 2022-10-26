@@ -22,11 +22,19 @@ body {
 	position: relative;
 	touch-action: auto;
 }
+
+#myMaps svg {
+	touch-action: auto !important;
+	pointer-events: all !important;
+	/* -webkit-user-drag: initial !important; */
+}
+
 #myMaps div {
 	height: 480px;
 	margin: auto auto;
 	width: 100%;
 }
+
 #controls {
 	background-color: lightGrey;
 	height: 50px;
