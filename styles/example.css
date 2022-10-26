@@ -6,6 +6,7 @@ body {
 	margin: 0;
 	padding: 1rem;
 	box-sizing: border-box;
+	touch-action: none;
 }
 
 #content {
@@ -19,6 +20,7 @@ body {
 	overflow-x: auto;
 	overflow-y: hidden;
 	position: relative;
+	touch-action: auto;
 }
 #myMaps div {
 	height: 480px;
