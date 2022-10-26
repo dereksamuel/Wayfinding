@@ -26,7 +26,7 @@ body {
 #myMaps svg {
 	touch-action: auto !important;
 	pointer-events: all !important;
-	/* -webkit-user-drag: initial !important; */
+	-webkit-user-drag: initial !important;
 }
 
 #myMaps div {
