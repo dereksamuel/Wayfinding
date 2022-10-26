@@ -168,12 +168,13 @@
 			floorIdsmap.push(floorId);
 			let svgElement = document.querySelector(`#${floorId} svg`);
 			setTimeout(() => {
-				svgElement.style["pointer-events"] = "auto";
+				svgElement.style["pointer-events"] = "all";
 				svgElement.style["touch-action"] = "auto";
-				// const elements = svgElement.querySelectorAll("[style='pointer-events: none;']");
-				// elements.forEach((item) => {
-				// 	item.style["pointer-events"] = "auto";
-				// });
+				svgElement.style["-webkit-user-drag"] = "initial";
+				const elements = svgElement.querySelectorAll("[style='pointer-events: none;']");
+				elements.forEach((item) => {
+					item.style["pointer-events"] = "all";
+				});
 			}, 100);
 			//  Create Manager
 			let mc = new Hammer.Manager(svgElement);
